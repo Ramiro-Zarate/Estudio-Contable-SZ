@@ -22,7 +22,7 @@ nav{
     a{
     text-decoration: none;
     color: #000000;
-}
+    }
 }
 
 .link_nav a{
@@ -52,6 +52,15 @@ nav{
     color: #ffffff;
     border: none;
     font-size: 20px;
+}
+
+.hamburguesa {
+    display: none; /* En PC NO mostramos el botón */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
 }
 
 #principal{
@@ -248,65 +257,6 @@ h2{
     background-color: #fff;    
 }
 
-
-@media (max-width: 992px) {
-    .tarjetas_servicios {
-    grid-template-columns: repeat(2, 1fr);
-    }
-
-    .tarjeta {
-    padding: 1.5rem;
-    }
-
-    #contacto {
-    grid-template-columns: 1fr; 
-    }
-
-    nav {
-    padding: 0.5rem 2rem;
-    }
-
-    h1 {
-    font-size: 60px;
-    }
-}
-
-/* Celulares (hasta 600px) */
-@media (max-width: 600px) {
-    .tarjetas_servicios {
-    grid-template-columns: 1fr;
-    }
-
-    #principal p {
-    width: 90%;
-    font-size: 16px;
-    }
-
-    #contacto{
-    grid-template-columns: 1fr;
-    padding: 1rem;
-    }
-
-    .form form {
-    padding: 1rem;
-    }
-
-    .info_form {
-    padding: 1rem;
-    }
-
-    nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    }
-
-    h1 {
-    font-size: 40px;
-    text-align: center;
-    }
-}
-
 #contacto{
     padding: 5rem;
     background-color: #F5F5F5;
@@ -391,7 +341,6 @@ textarea{
     gap: 0.8rem;
 }
 
-
 svg{
     width: 2rem;
     height: 2rem;
@@ -404,11 +353,112 @@ h3{
 
 footer{
     background-color: #9C1A15;
-    padding: 2rem;
+    padding: 4rem;
     
     p{
         color: #ffffff;
         font-size: 15px;
         text-align: center;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .tarjetas_servicios {
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tarjeta {
+    padding: 1.5rem;
+    }
+
+    #contacto {
+    grid-template-columns: 1fr; 
+    }
+
+    nav {
+    padding: 0.5rem 2rem;
+    }
+
+    h1 {
+    font-size: 60px;
+    }
+}
+
+/* Celulares*/
+@media (max-width: 480px) {
+    nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    width: 100%;
+    }
+    .hamburguesa {
+        display: block; 
+        background-color: #000000;
+        border-radius: 10%;
+    }
+    .link_nav {
+        display: none;  
+        flex-direction: column; 
+        width: 100%;
+        text-align: center;
+        background-color: #9c9c9c;
+        border-radius: 10%;
+        padding: 20px 0;
+    }
+    .link_nav.activo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+    font-size: 40px;
+    text-align: center;
+    }
+
+    .tarjetas_servicios {
+    grid-template-columns: 1fr;
+    }
+
+    #principal p {
+    width: 90%;
+    font-size: 16px;
+    }
+
+    #nosotros{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tarjetas_nosotros{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .form form {
+    padding: 1rem;
+    }
+
+    .info_form {
+    padding: 1rem;
+    }
+
+    #contacto{
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    }
+    .contacto_texto{
+        margin: 0 10px;
+    }
+    .seccion_form{
+        display: flex;
+        flex-direction: column;
     }
 }
